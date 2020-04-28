@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    'use strict';
+    {
+      let result=0;
+      let total=0;
+      for(let a=1;a<=9;a++){
+        for(let b=1;b<=9;b++){
+          result=a*b;
+          console.log(`九九: ${a}×${b}=${result}`);
+          if(result%3!==0){
+            total+=result;
+            console.log(`3の倍数以外の積の合計を表示: ${total}`);
+            if(total>200){
+              break;
+            }
+          console.log(`積の合計が200まで表示     : ${total}`);
+          }
+        }
+      }
+
+    }
+  </script>
+</body>
+</html>
