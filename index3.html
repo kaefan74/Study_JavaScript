@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study</title>
+</head>
+<body>
+  <script>
+    'use strict';
+    {
+      const funk = (a)=>{
+        if(typeof a ==='undefined'){
+          return('引数が設定されていません。');
+        }else if(!isNaN(a)){
+          return('引数は数値です');
+        }else if(Number(a)){
+          return('引数は文字列ですが、数値に変換が可能です');
+        }else if(typeof a ==="string"){
+          return('引数は文字列で、数値に変換はできません');
+        }else if(typeof a ==="function"){
+          return('引数は関数です');
+        }
+      }
+      console.log(funk());
+      console.log(funk(1));
+      console.log(funk('1'));
+      console.log(funk('あいうえお'));
+      console.log(funk(funk));
+    }
+
+  </script>
+</body>
+</html>
