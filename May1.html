@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>janken</title>
+</head>
+<body>
+  <script>
+    //グー0,チョキ1,パー2
+  const janken=['GU','CHOKI','PA'];
+  const kekka=[
+    [1,0,2],
+    [2,1,0],
+    [0,2,1]
+  ];
+  const resultJa=['勝ち','あいこ','負け'];
+ let k=0;
+  function game(result){
+    switch(result){
+      case 'GU':
+         k=0;
+        break;
+        case 'CHOKI':
+         k=1;
+        break;
+        case 'PA':
+         k=2;
+        break;
+    }
+    const cpu=Math.floor(Math.random()*3);
+    const r=kekka[k][cpu];
+    return(`${result}を出しました。相手は${janken[cpu]}です。 結果は${resultJa[r]}です`);
+  }
+
+
+  console.log(game('GU'));
+  console.log(game('CHOKI'));
+  console.log(game('PA'));
+  </script>
+</body>
+</html>
