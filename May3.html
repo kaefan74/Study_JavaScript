@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>study</title>
+  <style>
+
+    ul{
+      display: flex;
+      justify-content: space-around;
+      width: 50%;
+      margin: 100px auto;  
+      list-style-type: none;
+    }
+    li{
+      background: blue;
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+    }
+    .change{
+      background-color: red;
+    }
+
+  </style>
+</head>
+<body>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <!-- <ul id="box">
+      <li class="square" id="point1"></li>
+      <li class="square" id="point2"></li>
+      <li class="square" id="point3"></li>
+      <li class="square" id="point4"></li>
+      <li class="square" id="point5"></li>
+    </ul> -->
+    <!-- <p class="square"id="point1" ></p>
+    <p class="square" id="point2"></p>
+    <p class="square" id="point3"></p>
+    <p class="square" id="point4"></p>
+    <p class="square" id="point5"></p>
+    -->
+
+  <script>
+    'use strict';
+    {
+    //  let count=0; 
+     const c = document.querySelectorAll('li')
+     c.forEach((p,index)=>{
+      if(index===2){
+        p.addEventListener('click',()=>{
+          for(let p of c){
+            p.classList.toggle('change');
+          }
+        });
+      }else{
+        p.addEventListener('click',()=>{
+        p.classList.toggle('change');
+        });
+      }
+     });
+
+    //   const box = document.getElementById('box');
+    //  const point1 = document.getElementById('point1');
+    //  point1.addEventListener('mousedown',()=>{
+    //   point1.classList.toggle('change');
+    //   count++;
+    //  });
+    //  point1.addEventListener('mouseup',()=>{
+    //   point1.classList.remove('change');
+    //  });
+
+    //  const point2 = document.getElementById('point2');
+    //  point2.addEventListener('mousedown',()=>{
+    //   point2.classList.toggle('change');
+    //   count++;
+    //  });
+    //  point2.addEventListener('mouseup',()=>{
+    //   point2.classList.remove('change');
+    //  });
+
+    //  const point3 = document.getElementById('point3');
+    //  point3.addEventListener('mousedown',()=>{
+    //   point3.classList.toggle('change');
+    //   count++;
+    //   // box.classList.add('change');
+    //  });
+    //  point3.addEventListener('mouseup',()=>{
+    //   point3.classList.remove('change');
+
+    //   });
+      
+    //   const point4 = document.getElementById('point4');
+    //  point4.addEventListener('mousedown',()=>{
+    //   point4.classList.toggle('change');
+    //   count++;
+    //  });
+    //  point4.addEventListener('mouseup',()=>{
+    //   point4.classList.remove('change');
+    //   });
+
+    //   const point5 = document.getElementById('point5');
+    //  point5.addEventListener('mousedown',()=>{
+    //   point5.classList.toggle('change');
+    //   count++;
+    //  });
+    //  point5.addEventListener('mouseup',()=>{
+    //   point5.classList.remove('change');
+    //   });
+
+     }
+  </script>
+
+</body>
+</html>
