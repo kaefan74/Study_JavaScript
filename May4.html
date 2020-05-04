@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>study</title>
+
+  <style>
+    section{
+      margin: 100px auto;
+      width: 500px;
+      text-align: center;
+    }
+    .button{
+      border: 1px solid grey;
+      width: 150px;
+      margin: 10px auto;
+      padding: 5px;
+      cursor: pointer;
+      box-shadow: 1px 3px 2px gray;
+      user-select: none;
+      border-radius: 5px;
+    }
+    .button:active{
+      box-shadow: 0px 1px 2px gray;
+      margin-top: 31px;
+    }
+    #color{
+      height: 50px;
+      font-size: 25px;
+    }
+    .event{
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+ <section>
+   <p id='color'></p>
+   <div class="button" id="btn">文字が出ます</div>
+ </section>
+
+ <script>
+   'use strict'
+   {
+    const btn = document.getElementById('btn');
+    const color = document.getElementById('color');
+
+    //文字の色
+    const COLOS=["hotpink","blue","orange","green","red","deeppink","skyblue","purple","coral","plum"];
+
+    //色をランダムに表示する為
+    function rand(min,max)
+    {
+      return(Math.floor(Math.random()*(max+1-min)+min));
+    }
+    //文字色を変える、中のテキストが選択されないようにする
+    function change(){
+      color.style.color=COLOS[rand(0,COLOS.length)];
+      color.classList.add('event');
+    }
+    //ボタンがクリックされた時
+    btn.addEventListener('click',()=>{
+      color.textContent = 'クリックすると文字も色が変わります';
+    });
+    //文字がクリックされた時
+    color.addEventListener('click',()=>{
+      change();
+    });
+   }
+ </script>
+</body>
+</html>
