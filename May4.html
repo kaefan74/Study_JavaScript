@@ -49,24 +49,28 @@
     //文字の色
     const COLOS=["hotpink","blue","orange","green","red","deeppink","skyblue","purple","coral","plum"];
 
+    //ボタンがクリックされた時
+    btn.addEventListener('click',()=>{
+      color.textContent = 'クリックすると文字も色が変わります';
+    });
+
+    //文字がクリックされた時関数changeが実行される
+    color.addEventListener('click',()=>{
+      change();
+    });
+
+    //文字色を変える、中のテキストが選択されないようにする
+    //change関数の中でrand関数をしようしている
+    function change(){
+      color.style.color=COLOS[rand(0,COLOS.length)];
+      color.classList.add('event');
+    }
+    
     //色をランダムに表示する為
     function rand(min,max)
     {
       return(Math.floor(Math.random()*(max+1-min)+min));
     }
-    //文字色を変える、中のテキストが選択されないようにする
-    function change(){
-      color.style.color=COLOS[rand(0,COLOS.length)];
-      color.classList.add('event');
-    }
-    //ボタンがクリックされた時
-    btn.addEventListener('click',()=>{
-      color.textContent = 'クリックすると文字も色が変わります';
-    });
-    //文字がクリックされた時
-    color.addEventListener('click',()=>{
-      change();
-    });
    }
  </script>
 </body>
