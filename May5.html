@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>study</title>
+  <style>
+    input{
+      display: block;
+      margin: 100px auto 50px;
+      width: 200px;
+      height: 30px;
+      text-align: center;
+      font-size: 20px;
+    }
+    #moziretsu{
+      text-align: center;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  
+  <input id="nyuuryoku"type="text">
+  <div id="moziretsu" ></div>
+
+ <script>
+   'use strict';
+   {
+     const nyuuryoku=document.getElementById('nyuuryoku');
+     const mozi=document.getElementById('moziretsu');
+    let m="";
+    nyuuryoku.addEventListener('keydown',e=>{
+      m+= e.key;
+      moziretsu.textContent = m;
+    });
+
+   }
+ </script>
+</body>
+</html>
