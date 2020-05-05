@@ -29,10 +29,9 @@
    {
      const nyuuryoku=document.getElementById('nyuuryoku');
      const mozi=document.getElementById('moziretsu');
-    let m="";
+
     nyuuryoku.addEventListener('keydown',e=>{
-      m+= e.key;
-      moziretsu.textContent = m;
+      moziretsu.textContent = nyuuryoku.value;
     });
 
    }
