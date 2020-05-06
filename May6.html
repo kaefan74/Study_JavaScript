@@ -32,13 +32,13 @@
     <p>税抜き価格を入力して下さい</p>
     <input type="text" id="nyuuryoku">
     <div>
-      <button id ='btn'>決定</button>
-      <button id ='reset'>リセット</button>
+      <button id ="btn">決定</button>
+      <button id ="reset">リセット</button>
     </div>
-    <p>消費税額(10%)</p>
-    <div id="zeikomi" class='blank'></div>
+    <p>税込み額(10%)</p>
+    <div id="zeikomi" class="blank"></div>
     <p>合計金額</p>
-    <div id="goukei" class='blank'></div>
+    <div id="goukei" class="blank"></div>
   </section>
 
   <script>
@@ -51,7 +51,7 @@
 
     btn.addEventListener('click',()=>{
       if(!isNaN(nyuuryoku.value)){
-      const zei = Math.round((nyuuryoku.value)*1.1);
+      let zei = Math.round((nyuuryoku.value)*1.1);
       zeikomi.textContent = `${zei}円`;
       total+=zei;
       goukei.textContent = `${total}円`;
