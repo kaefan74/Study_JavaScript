@@ -1,5 +1,6 @@
 'use stript';
 {
+  //ラーメンを作る画像
   const imgRamen = [
     'img/thumbnail_food_ramen_topping.jpg',
     'img/food_men_chuka.png',
@@ -8,7 +9,7 @@
     'img/ramen_top_syouyu.png',
     'img/food_men_family_ramen.png'
   ]
-
+  //ダンスの画像
   const imgDance = [
     'img/dance_isyou_girl.png',
     'img/dance_line_dance.png',
@@ -26,6 +27,8 @@
   const dancing =document.getElementById('dancing');
   const btnD = document.getElementById('btnD');
 
+  //ラーメン作りクリックしたら順番に表示
+  //countの数が画像の数と同じになったらはじめcount 0からスタート
   btn.addEventListener('click',()=>{
       cooking.src = imgRamen[count];
       count++;
@@ -34,11 +37,12 @@
     }
   });
 
+  //ラーメン作りをランダムに表示
   btnR.addEventListener('click',()=>{
     let rand = Math.floor(Math.random()*imgRamen.length);
     cooking2.src = imgRamen[rand];
   });
-
+  //ダンスをランダムに表示
   btnD.addEventListener('click',()=>{
     let rand = Math.floor(Math.random()*imgDance.length);
     dancing.src = imgDance[rand];
