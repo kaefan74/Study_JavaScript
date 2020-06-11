@@ -4,29 +4,87 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    #characters{
+      font-size: 2rem;
+    }
+    #typed{
+      color: red;
+    }
+  </style>
 </head>
 <body>
-  <script>
-    'use strict';
-    {
-      let result=0;
-      let total=0;
-      for(let a=1;a<=9;a++){
-        for(let b=1;b<=9;b++){
-          result=a*b;
-          console.log(`九九: ${a}×${b}=${result}`);
-          if(result%3!==0){
-            total+=result;
-            console.log(`3の倍数以外の積の合計を表示: ${total}`);
-            if(total>200){
-              break;
-            }
-          console.log(`積の合計が200まで表示     : ${total}`);
-          }
-        }
-      }
 
+  <div id="characters">
+    <span id="typed"></span><span id="untyped">Helloworld</span>
+  </div>
+
+  <script>
+    //id要素を取得する
+    const typedField = document.getElementById('typed');
+    const untypedField = document.getElementById('untyped');
+    const timeElement = document.getElementById('time');
+    
+    //文字
+    const strs=[
+      'HelloWorld',
+      'Google',
+      'JavaScript'
+    ];
+    /*
+    数字をランダムに出す
+    @param max
+    @return Math.floor(Math.random()*Math.floor(max))
+    */
+    function randomInt(max){
+      return Math.floor(Math.random()*Math.floor(max)); 
     }
+
+    /*
+    strs内での次の文字を選ぶ
+    @param void
+    @return strs[idx]
+    */
+    function nextString(){
+      const idx = randomInt(strs.length);
+      return strs[idx];
+    }
+    /*
+    次の文字を表示させる
+    */
+    function next(){
+       typed='';
+       untyped =nextString();
+      updateTextField();
+    }
+    /*
+    文字をtextContent(画面)に表示させる
+    */
+    function updateTextField(){
+      typedField.textContent = typed;
+      untypedField.textContent = untyped;
+    }
+    /*
+    キーを押した時の処理
+    */
+    document.addEventListener('keydown',function(e){
+      //押したキーとuntyped.substring(0,1)が一致しなかったら処理を止める
+      if(e.key!== untyped.substring(0,1)){
+        return;
+      }
+      //typedにuntypedの一文字を入れる
+      typed+=untyped.substring(0,1);
+      //untypedを１文字づつ減らす
+      untyped = untyped.substring(1);
+
+      updateTextField();
+      //untypedの文字が無くなったらnext()を実行(次の文字を表示させる)
+      if(untyped ===''){
+        next();
+      }
+    });
+    next();
+
   </script>
 </body>
 </html>
